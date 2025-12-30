@@ -1,9 +1,6 @@
 1. Fast API란!?
     Fast Api는 python으로 간단하고 빠르게 Rest Api를 만들기 위한 FrameWork입니다.
 
-
-
-
 2. Fast API의 특징
 1.빠른성능을 보여줍니다
     - Starlette(스타레테)라는 핵심 내부 프레임워클르 사용하여 비동기 처리를 통해 높은 성능을 보장합니다.
