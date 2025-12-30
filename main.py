@@ -2,8 +2,8 @@ from typing import Annotated
 
 from fastapi import FastAPI, HTTPException
 
-from app.models.users import UserModel
-from app.schemas.users import UserCreateRequest, UserUpdateRequest
+from app.models import UserModel
+from app import UserCreateRequest, UserUpdateRequest
 
 app = FastAPI()
 
