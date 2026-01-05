@@ -411,6 +411,17 @@ files = [
 typing-extensions = ">=4.14.1"
 
 [[package]]
+name = "python-multipart"
+version = "0.0.21"
+description = "A streaming multipart parser for Python"
+optional = false
+python-versions = ">=3.10"
+files = [
+    {file = "python_multipart-0.0.21-py3-none-any.whl", hash = "sha256:cf7a6713e01c87aa35387f4774e812c4361150938d20d232800f75ffcf266090"},
+    {file = "python_multipart-0.0.21.tar.gz", hash = "sha256:7137ebd4d3bbf70ea1622998f902b97a29434a9e8dc40eb203bbcf7c2a2cba92"},
+]
+
+[[package]]
 name = "ruff"
 version = "0.8.2"
 description = "An extremely fast Python linter and code formatter, written in Rust."
@@ -500,4 +511,4 @@ standard = ["colorama (>=0.4)", "httptools (>=0.6.3)", "python-dotenv (>=0.13)",
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.13"
-content-hash = "60fb5bb7dae3b5b5324729685106c7b1879bb95e2386c205b2b1037fc302cb11"
+content-hash = "54a19f9a35b1e8b92ed29b83daa81e99321b50d05380ef4bcb820d62528ed909"

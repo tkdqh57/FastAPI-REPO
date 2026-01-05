@@ -21,3 +21,12 @@ class MovieUpdateRequerst(BaseModel):
     title: str | None = None
     playtime: Annotated[int, Field(gt=0)] | None = None
     genre: list[str] | None = None
+
+class MovieResponse(BaseModel):
+    id: int
+    title: str
+    playtime: int
+    plot: str
+    cast: dict[str, Any]
+    genre: GenreEnum
+    poster_image_url: str | None = None

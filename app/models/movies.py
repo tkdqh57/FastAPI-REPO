@@ -1,5 +1,7 @@
 import random
 
+from pydantic import BaseModel, Model, Field
+
 
 class MovieModel:
     _data = []  # 데이터를 저장할 리스트
@@ -70,3 +72,14 @@ class MovieModel:
 
     def __str__(self):
         return self.title
+
+class Movie(BaseModel, Model):
+    title = fields.CharField(max_length=255)
+    plot = fields.TextField()
+    cast = fields.JSONField()
+    playtime = fields.IntField()
+    genre = fields.CharEnumField(GenreEnum)
+    poster_image_url = fields.CharField(max_length=255, null=True)
+
+    class Meta:
+        table = "movies"
