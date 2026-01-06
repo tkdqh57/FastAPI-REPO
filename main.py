@@ -4,17 +4,24 @@ from app.models.movies import MovieModel
 from app.models.users import UserModel
 from app.routers.movies import movie_router
 from app.routers.users import user_router
+from app.configs.database import initialize_tortoise
+from app.routers.movies import movie_router
+from app.routers.likes import like_router
+from app.routers.reviews import review_router
+from app.routers.users import user_router
 
 UserModel.create_dummy()
 MovieModel.create_dummy()
 
 app = FastAPI()
 
-UserModel.create_dummy()  # API 테스트를 위한 더미를 생성하는 메서드 입니다.
-MovieModel.create_dummy()
+# UserModel.create_dummy()  # API 테스트를 위한 더미를 생성하는 메서드 입니다.
+# MovieModel.create_dummy()
 
 app.include_router(user_router)
 app.include_router(movie_router)
+app.include_router(review_router)
+app.include_router(like_router)
 
 if __name__ == '__main__':
     import uvicorn
