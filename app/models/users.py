@@ -5,8 +5,10 @@ from __future__ import annotations
 import random
 from typing import Any
 
-from pydantic import BaseModel, Field, Model
+from pydantic import BaseModel, Field, Model, fields
 from passlib.context import CryptContext
+
+from app.schemas.users import GenderEnum
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
@@ -107,3 +109,13 @@ class User(BaseModel, Model):
 
     class Meta:
         table = 'users'
+
+
+class Follow(BaseModel, Model):
+    follower = fields.ForeignKeyField('models.User', related_name='followers')
+    following = fields.ForeignKeyField('models.User', related_name='following')
+    is_following = fields.BooleanField(default=True)
+
+    class Meta:
+        table = 'follows'
+        unique_together = (('follower', 'following'))
